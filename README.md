@@ -13,14 +13,15 @@ https://github.com/uru2/rec_radiko_ts
 以下のようにコマンドから起動します。
 
 ```
-docker run --rm -v /recorder:/usr/volume test_radiko /usr/local/bin/rec_radiko_ts.sh -s TBS -f 202011031000 -d 1
+docker run --rm -v /recorder:/usr/volume yamadatt/rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f 202011031000 -d 1
 ```
 
-シェルのオプションはhttps://github.com/uru2/rec_radiko_tsを参照してください。
+シェルのオプションは[uru2/rec\_radiko\_ts: Radiko timefree program recorder](https://github.com/uru2/rec_radiko_ts)を参照してください。
 
 ## Dockerfileについて
 
 できるだけ軽量にしたいため、Alpine Linuxを利用しています。
+
 
 
 
