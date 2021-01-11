@@ -12,7 +12,7 @@ RUN apk --update add \
 
 COPY --from=tzdata /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-RUN curl -s -o /usr/local/bin/rec_radiko_ts.sh -LO https://raw.githubusercontent.com/uru2/rec_radiko_ts/master/rec_radiko_ts.sh \
-    chmod +x /usr/local/bin/rec_radiko_ts.sh
+RUN curl -s -o /usr/local/bin/rec_radiko_ts.sh -LO https://raw.githubusercontent.com/uru2/rec_radiko_ts/master/rec_radiko_ts.sh
+RUN chmod +x /usr/local/bin/rec_radiko_ts.sh
 
 WORKDIR /usr/volume
