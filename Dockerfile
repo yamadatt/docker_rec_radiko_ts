@@ -8,10 +8,11 @@ RUN apk --update add \
     --no-cache \
     libxml2-utils \
     ffmpeg \
-#    bash \
     curl
 
 COPY --from=tzdata /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-COPY ./rec_radiko_ts.sh /usr/local/bin/
+RUN curl -s -o /usr/local/bin/rec_radiko_ts.sh -LO https://raw.githubusercontent.com/uru2/rec_radiko_ts/master/rec_radiko_ts.sh \
+    chmod +x /usr/local/bin/rec_radiko_ts.sh
+
 WORKDIR /usr/volume
