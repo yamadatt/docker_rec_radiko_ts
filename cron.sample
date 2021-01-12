@@ -1,16 +1,12 @@
 # 
-00 6 * * * /usr/local/bin/slack /usr/share/nginx/html/munin/munin/rec/rec/cpu-day.png
-00 6 * * * /usr/local/bin/slack /usr/share/nginx/html/munin/munin/rec/rec/df-day.png
-00 12 * * * /usr/local/bin/slack /usr/share/nginx/html/munin/munin/rec/rec/cpu-day.png
-00 18 * * * /usr/local/bin/slack /usr/share/nginx/html/munin/munin/rec/rec/cpu-day.png
-
+00 6,12,18 * * * /usr/local/bin/slack /usr/share/nginx/html/munin/munin/rec/rec/cpu-day.png
+00 6,12,18 * * * /usr/local/bin/slack /usr/share/nginx/html/munin/munin/rec/rec/df-day.png
 
 # ato6
 
 05 19 * * 1-5 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1800" -d 60 -o "`date +\%Y-\%m-\%d`_After6_time_1_free.m4a"
 05 20 * * 1-5 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1900" -d 60 -o "`date +\%Y-\%m-\%d`_After6_time_2_free.m4a"
 05 21 * * 1-5 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`2000" -d 60 -o "`date +\%Y-\%m-\%d`_After6_time_3_free.m4a"
-
 
 # session
 
@@ -41,6 +37,5 @@
 # FMJ
 05 2 * * 6 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s FMJ -f "`date +\%Y\%m\%d`0130" -d 30 -o "`date +\%Y-\%m-\%d`_FlipSidePlanet_time_free.m4a"
 
-# OLD
-00 18 * * 1-5 /root/docker_rec_radiko/radiko_docker_run.sh TBS 181 /recorder アフター6ジャンクション
+
 
