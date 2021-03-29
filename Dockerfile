@@ -1,9 +1,9 @@
-FROM alpine:3.12.1 as tzdata
+FROM alpine:3.13.0 as tzdata
 RUN apk --update add \
     --no-cache \
     tzdata
 
-FROM alpine:3.12.1
+FROM alpine:3.13.0
 RUN apk --update add \
     --no-cache \
     libxml2-utils \
