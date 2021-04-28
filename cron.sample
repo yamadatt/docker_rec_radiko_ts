@@ -1,7 +1,7 @@
 # 
 00 6,12,18 * * * /usr/local/bin/slack /usr/share/nginx/html/munin/munin/rec/rec/cpu-day.png
 00 6,12,18 * * * /usr/local/bin/slack /usr/share/nginx/html/munin/munin/rec/rec/df-day.png
-00 3,7,13,19,23 * * * /home/chinachu/chinachu/recorded/kijyo/auto_blogsync.sh
+00 19 * * * /home/chinachu/chinachu/recorded/kijyo/auto_blogsync.sh
 
 # ato6
 
@@ -17,6 +17,13 @@
 05 17 * * 1-5 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1600" -d 60 -o "`date +\%Y-\%m-\%d`_Session_time_free_2.m4a"
 55 17 * * 1-5 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1700" -d 50 -o "`date +\%Y-\%m-\%d`_Session_time_free_3.m4a"
 
+
+# 日曜サンデー
+
+05 14 * * 7 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1300" -d 60 -o "`date +\%Y-\%m-\%d`_日曜サンデー_1_time_free.m4a"
+05 15 * * 7 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1400" -d 60 -o "`date +\%Y-\%m-\%d`_日曜サンデー_2_time_free.m4a"
+05 16 * * 7 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1500" -d 60 -o "`date +\%Y-\%m-\%d`_日曜サンデー_3_time_free.m4a"
+05 17 * * 7 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1600" -d 60 -o "`date +\%Y-\%m-\%d`_日曜サンデー_4_time_free.m4a"
 
 # TBS
 
