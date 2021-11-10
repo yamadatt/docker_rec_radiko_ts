@@ -8,4 +8,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Hadolint
-        uses: brpaz/hadolint-action@master
+        uses: brpaz/hadolint-action@main
