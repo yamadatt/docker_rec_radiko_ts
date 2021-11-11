@@ -23,7 +23,7 @@ jobs:
 
       - name: Build :latest
         if: success()
-        run: docker build -t username/imagename:latest .
+        run: docker build -t yamadatt/docker_rec_radiko_ts:latest .
 
       - name: Deploy :latest
         if: success()
