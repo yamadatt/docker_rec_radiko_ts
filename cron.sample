@@ -1,5 +1,9 @@
+#*/1 * * * * /home/chinachu/chinachu/recorded/slack2hatena/slack2hatena.sh > /home/chinachu/chinachu/recorded/slack2hatena/cronsh.log 2>&1
+#*/1 * * * * /home/chinachu/chinachu/recorded/slack2hatena/get-channel > /home/chinachu/chinachu/recorded/slack2hatena/cron.log 2>&1
+#*/1 * * * * /usr/local/bin/get-channel >> /home/chinachu/chinachu/recorded/slack2hatena/cron.log 2>&1
+
 # 
-#05 6 * * * /home/chinachu/chinachu/recorded/slack2hatena/get-channel
+05 6 * * * /home/chinachu/chinachu/recorded/slack2hatena/get-channel
 00 6,12,18 * * * /usr/local/bin/slack /usr/share/nginx/html/munin/munin/rec/rec/df-day.png
 00 6,12,18 * * * /usr/local/bin/slack /usr/share/nginx/html/munin/munin/rec/rec/hddtemp_smartctl-day.png
 00 7,13,19 * * * /home/chinachu/chinachu/recorded/kijyo/auto_blogsync.sh
@@ -36,19 +40,19 @@
 59 23 * * 1-5 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`2200" -d 115 -o "`date +\%Y-\%m-\%d`_明日のカレッジ_time_free.m4a"
 05 17 * * 7 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1300" -d 240 -o "`date +\%Y-\%m-\%d`_日曜サンデー_time_free.m4a"
 05 7 * * 6 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`0600" -d 60 -o "`date +\%Y-\%m-\%d`_木梨の会_time_free.m4a"
-35 21 * * 4 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`2100" -d 30 -o "`date +\%Y-\%m-\%d`_MYGAME_time_free.m4a"
 05 03 * * 3 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`0100" -d 120 -o "`date +\%Y-\%m-\%d`_爆笑問題COWVOY_time_free.m4a"
 05 21 * * 6 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`2000" -d 60 -o "`date +\%Y-\%m-\%d`_MISIA_time_free.m4a"
 05 3 * * 7 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`0200" -d 60 -o "`date +\%Y-\%m-\%d`_東京ポッド許可局_time_free.m4a"
 
 # LFR
-05 3 * * 2 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0100" -d 120 -o "`date +\%Y-\%m-\%d`_ANN菅田将暉_time_free.m4a"
+05 1 * * 2 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0000" -d 60 -o "`date +\%Y-\%m-\%d`_ANN山田裕貴_time_free.m4a"
+05 3 * * 2 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0100" -d 120 -o "`date +\%Y-\%m-\%d`_ANNCreapyNuts_time_free.m4a"
 05 3 * * 3 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0100" -d 120 -o "`date +\%Y-\%m-\%d`_ANN星野源_time_free.m4a"
 05 3 * * 5 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0100" -d 120 -o "`date +\%Y-\%m-\%d`_ANNナイナイ_time_free.m4a"
 05 3 * * 6 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0100" -d 120 -o "`date +\%Y-\%m-\%d`_ANN霜降り_time_free.m4a"
 05 3 * * 7 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0100" -d 120 -o "`date +\%Y-\%m-\%d`_ANNオードリー_time_free.m4a"
-35 4 * * 2 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0300" -d 90 -o "`date +\%Y-\%m-\%d`_ANNファーストサマーウイカ_time_free.m4a"
-35 4 * * 3 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0300" -d 90 -o "`date +\%Y-\%m-\%d`_ANNCreapyNuts_time_free.m4a"
+35 4 * * 2 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0300" -d 90 -o "`date +\%Y-\%m-\%d`_ANNフワちゃん_time_free.m4a"
+35 4 * * 3 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0300" -d 90 -o "`date +\%Y-\%m-\%d`_ANNぺこぱ_time_free.m4a"
 35 4 * * 4 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0300" -d 90 -o "`date +\%Y-\%m-\%d`_ANN佐久間宣之_time_free.m4a"
 
 
