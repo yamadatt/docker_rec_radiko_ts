@@ -3,6 +3,7 @@
 #*/1 * * * * /usr/local/bin/get-channel >> /home/chinachu/chinachu/recorded/slack2hatena/cron.log 2>&1
 
 # 
+<<<<<<< HEAD
 05 6 * * * /home/chinachu/chinachu/recorded/slack2hatena/get-channel
 00 6,12,18 * * * /usr/local/bin/slack /usr/share/nginx/html/munin/munin/rec/rec/df-day.png
 00 6,12,18 * * * /usr/local/bin/slack /usr/share/nginx/html/munin/munin/rec/rec/hddtemp_smartctl-day.png
@@ -11,6 +12,10 @@
 
 #00 6 * * * /home/chinachu/chinachu/recorded/logmeme/date-post.sh
 
+=======
+00 6,12,18 * * * /usr/local/bin/slack /usr/share/nginx/html/munin/munin/rec/rec/cpu-day.png
+00 6,12,18 * * * /usr/local/bin/slack /usr/share/nginx/html/munin/munin/rec/rec/df-day.png
+>>>>>>> a30eac0... cron sample change
 
 # ato6
 
@@ -18,7 +23,6 @@
 05 20 * * 1-5 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1900" -d 60 -o "`date +\%Y-\%m-\%d`_After6_time_2_free.m4a"
 05 21 * * 1-5 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`2000" -d 60 -o "`date +\%Y-\%m-\%d`_After6_time_3_free.m4a"
 06 21 * * 1-5 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1800" -d 180 -o "`date +\%Y-\%m-\%d`_After6_time_free.m4a"
-
 
 # session
 
@@ -57,5 +61,11 @@
 
 
 # FMJ
+<<<<<<< HEAD
 05 3 * * 6 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s FMJ -f "`date +\%Y\%m\%d`0230" -d 30 -o "`date +\%Y-\%m-\%d`_FlipSidePlanet_time_free.m4a"
+=======
+05 2 * * 6 docker run --rm -v /recorder:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s FMJ -f "`date +\%Y\%m\%d`0130" -d 30 -o "`date +\%Y-\%m-\%d`_FlipSidePlanet_time_free.m4a"
+
+
+>>>>>>> a30eac0... cron sample change
 
