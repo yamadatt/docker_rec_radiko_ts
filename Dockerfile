@@ -1,14 +1,14 @@
-FROM alpine:3.17.3 as tzdata
-RUN apk --update add \
+FROM alpine:3.18.4 as tzdata
+RUN apk --update-cache add \
     --no-cache \
-    tzdata=2023c-r0
+    tzdata=2023c-r1
 
-FROM alpine:3.17.3
-RUN apk --update add \
+FROM alpine:3.18.4
+RUN apk --update-cache add \
     --no-cache \
-    libxml2-utils=2.10.4-r0 \
-    ffmpeg=5.1.3-r0\
-    curl=8.0.1-r0
+    libxml2-utils=2.11.4-r0 \
+    ffmpeg=6.0-r15 \
+    curl=8.3.0-r0
 
 COPY --from=tzdata /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
