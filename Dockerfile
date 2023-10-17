@@ -8,7 +8,7 @@ RUN apk --update-cache add \
     --no-cache \
     libxml2-utils=2.11.4-r0 \
     ffmpeg=6.0-r15 \
-    curl=8.3.0-r0
+    curl=8.4.0-r0
 
 COPY --from=tzdata /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
