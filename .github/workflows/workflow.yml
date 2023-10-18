@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Hadolint
         uses: brpaz/hadolint-action@master
   push:
@@ -41,7 +41,7 @@ jobs:
       # https://github.com/slackapi/slack-github-action
       - name: Send GitHub Action trigger data to Slack workflow
         id: slack
-        uses: slackapi/slack-github-action@v1.16.0
+        uses: slackapi/slack-github-action@v1.24.0
         with:
           payload: |
             {
