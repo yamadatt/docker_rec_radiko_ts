@@ -2,7 +2,7 @@
 00 1 * * * /home/yamadatt/git/slack-exporter/slack_export.sh
 
 # after6junction2
-40 23 * * 1-4 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`2200" -d 120 -o "`date +\%Y-\%m-\%d`_After6Junction2.m4a"
+59 23 * * 1-4 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`2200" -d 115 -o "`date +\%Y-\%m-\%d`_After6Junction2.m4a"
 
 # Session
 05 19 * * 1-5 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1800" -d 60 -o "`date +\%Y-\%m-\%d`_Session_time_1_free.m4a"
