@@ -6,7 +6,7 @@ jobs:
     steps:
     # actions-timelineはpost処理の最後に実行されないと全てのジョブの情報を収集できないため、
     # 呼び出しは `actions/checkout` などよりも前の一番最初に行います。
-    - uses: Kesin11/actions-timeline@v1
+    - uses: Kesin11/actions-timeline@v2.0.2
   build:
     name: Hadolint
     runs-on: ubuntu-latest
