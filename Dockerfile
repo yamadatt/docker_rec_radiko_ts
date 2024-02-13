@@ -1,7 +1,7 @@
 FROM alpine:3.19.0 as tzdata
 RUN apk --update-cache add \
     --no-cache \
-    tzdata=2023d-r0
+    tzdata=2024a-r0
 
 FROM alpine:3.19.0
 RUN apk --update-cache add \
