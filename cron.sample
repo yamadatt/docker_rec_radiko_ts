@@ -1,14 +1,17 @@
+
+29 22 * * * docker run --rm -v /media/tv_record:/recorded test radi.sh -t radiko -s FMT -d 120 -o "/recorded/$(date "+%Y-%m-%d_%H%M%S") ssa.m4a"
+
 00 1 * * * docker exec -d epgstation-nvenc npm run backup config/`date +\%Y\%m\%d`_rule_backup.json
 00 1 * * * /home/yamadatt/git/slack-exporter/slack_export.sh
 
 # after6junction2
-59 23 * * 1-4 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`2200" -d 115 -o "`date +\%Y-\%m-\%d`_After6Junction2.m4a"
+05 22 * * 1-4 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`2000" -d 120 -o "`date +\%Y-\%m-\%d`_After6Junction2.m4a"
 
 # Session
-05 19 * * 1-5 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1800" -d 60 -o "`date +\%Y-\%m-\%d`_Session_time_1_free.m4a"
-05 20 * * 1-5 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1900" -d 60 -o "`date +\%Y-\%m-\%d`_Session_time_2_free.m4a"
-05 21 * * 1-5 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`2000" -d 60 -o "`date +\%Y-\%m-\%d`_Session_time_3_free.m4a"
-06 21 * * 1-5 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1800" -d 180 -o "`date +\%Y-\%m-\%d`_Session_time_free.m4a"
+05 18 * * 1-5 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1700" -d 60 -o "`date +\%Y-\%m-\%d`_Session_time_1_free.m4a"
+05 19 * * 1-5 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1800" -d 60 -o "`date +\%Y-\%m-\%d`_Session_time_2_free.m4a"
+05 20 * * 1-5 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1900" -d 60 -o "`date +\%Y-\%m-\%d`_Session_time_3_free.m4a"
+06 20 * * 1-5 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1700" -d 180 -o "`date +\%Y-\%m-\%d`_Session_time_free.m4a"
 
 
 # TBS
@@ -17,13 +20,13 @@
 05 17 * * 7 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`1300" -d 240 -o "`date +\%Y-\%m-\%d`_日曜サンデー_time_free.m4a"
 05 7 * * 6 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`0600" -d 60 -o "`date +\%Y-\%m-\%d`_木梨の会_time_free.m4a"
 05 03 * * 3 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`0100" -d 120 -o "`date +\%Y-\%m-\%d`_爆笑問題COWVOY_time_free.m4a"
-05 3 * * 7 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`0200" -d 60 -o "`date +\%Y-\%m-\%d`_東京ポッド許可局_time_free.m4a"
+05 3 * * 7 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s TBS -f "`date +\%Y\%m\%d`0100" -d 60 -o "`date +\%Y-\%m-\%d`_東京ポッド許可局_time_free.m4a"
 
 # LFR
 # 月曜日
-05 1 * * 2 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0000" -d 60 -o "`date +\%Y-\%m-\%d`_ANNx山田裕貴_time_free.m4a"
-05 3 * * 2 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0100" -d 120 -o "`date +\%Y-\%m-\%d`_ANNado_time_free.m4a"
-35 4 * * 2 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0300" -d 90 -o "`date +\%Y-\%m-\%d`_ANN0フワちゃん_time_free.m4a"
+05 1 * * 2 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0000" -d 60 -o "`date +\%Y-\%m-\%d`_永野芽郁_time_free.m4a"
+05 3 * * 2 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0100" -d 120 -o "`date +\%Y-\%m-\%d`_山田裕貴_time_free.m4a"
+
 
 # 火曜日
 05 3 * * 3 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s LFR -f "`date +\%Y\%m\%d`0100" -d 120 -o "`date +\%Y-\%m-\%d`_ANN星野源_time_free.m4a"
@@ -44,4 +47,4 @@
 # FMJ
 05 3 * * 6 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s FMJ -f "`date +\%Y\%m\%d`0230" -d 30 -o "`date +\%Y-\%m-\%d`_FlipSidePlanet_time_free.m4a"
 
-05 04 * * 2-6 docker run --rm -v /media/radio:/usr/volume yamadatt/docker_rec_radiko_ts /usr/local/bin/rec_radiko_ts.sh -s FMJ -f "`date +\%Y\%m\%d`0200" -d 120 -o "`date +\%Y-\%m-\%d`_TOKYO M.A.A.D SPIN_time_free.m4a"
+
